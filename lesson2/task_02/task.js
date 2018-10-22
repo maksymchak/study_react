@@ -28,7 +28,7 @@ const ArticleComponent = React.createClass({
 ReactDOM.render(
     <ArticleComponent
 		title="Article title"
-		author=" Maksymchak"
+		author="Anton Maksymchak"
     	text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus ex ad sapiente. Aut reprehenderit odit nam, repellat aliquam ut est eligendi voluptate velit voluptatum, ullam aliquid a blanditiis officia eos."			
     	likes={121}
     	comments={34}
