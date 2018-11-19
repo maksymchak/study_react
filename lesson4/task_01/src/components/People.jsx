@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './People.css';
+import './People.scss';
 
 
 const Users = React.createClass({

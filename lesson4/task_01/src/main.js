@@ -4,7 +4,7 @@ import React from 'react';
 
 import Feed from './components/Feed.jsx';
 
-import './assets/main.css';
+import './assets/main.scss';
 
 ReactDOM.render(
   <Feed />,

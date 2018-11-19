@@ -5,7 +5,7 @@ import FES from '../list/FES.json';
 import Users from './People.jsx';
 
 
-import './Feed.css';
+import './Feed.scss';
 
 const Feed = React.createClass({
 
