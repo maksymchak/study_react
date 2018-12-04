@@ -4,7 +4,7 @@ import FES from '../FES.json';
 
 import Users from './People.jsx';
 
-import './Feed.css';
+import './Feed.scss';
 
 
 class Feed extends Component {

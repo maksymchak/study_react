@@ -29,8 +29,10 @@
   color: blue;
 }
 
-.container__info__location i {
-  color: green;
+.container__info__location {
+  i {
+    color: green;    
+  }
 }
 
 .container__info__link{
