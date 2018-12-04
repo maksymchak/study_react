@@ -1,0 +1,18 @@
+.wrapper {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.headLink {
+  text-align: center;
+  font-family: 'Galada', cursive;
+  color: blue;
+}
+
+.search-field {
+  width: 96%;
+  padding: 10px;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
