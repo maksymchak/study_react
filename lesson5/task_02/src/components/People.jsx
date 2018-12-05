@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import './People.scss';
 
@@ -42,5 +43,16 @@ class Users extends Component {
     );
   }
 }
+
+Users.propTypes = {
+  id : PropTypes.number,
+  avatar : PropTypes.string,
+  name : PropTypes.string,
+  location: PropTypes.string,
+  geoData: PropTypes.string,
+  facebook: PropTypes.string,
+  github: PropTypes.string,
+  mail: PropTypes.string
+}  
 
 export default Users;
