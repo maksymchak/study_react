@@ -49,7 +49,7 @@ const App = () => {
   ];
 
   return (
-    <div>
+    <div className="wrapper">
       <AppTitle />
       <Contacts users={userData} />
     </div>
