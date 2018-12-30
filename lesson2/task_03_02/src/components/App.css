@@ -1,0 +1,32 @@
+@keyframes rotate {
+  from {transform: rotateY(0deg);
+    background-image: url('http://i.imgur.com/8Z5E5.jpg');
+  }
+  to {transform: rotateY(180deg);
+    background-image: url('http://www.seantwiddy.com/wp-content/uploads/2011/03/Twiddy_TropicalFish_Pattern-400x400.jpg');
+  }
+}
+
+@keyframes rotateSecond {
+  from {transform: rotateY(180deg);
+    background-image: url('http://www.seantwiddy.com/wp-content/uploads/2011/03/Twiddy_TropicalFish_Pattern-400x400.jpg');
+  }
+  to {transform: rotateY(0deg);
+      background-image: url('http://i.imgur.com/8Z5E5.jpg');
+  }
+}
+
+div{
+  width: 400px;
+  height: 400px;
+}
+
+.frontSide{
+  animation: rotate 2s;
+  animation-fill-mode: forwards;
+}
+
+.backSide{
+  animation: rotateSecond 2s;
+  animation-fill-mode: forwards;
+}
