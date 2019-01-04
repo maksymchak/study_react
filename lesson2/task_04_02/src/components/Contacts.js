@@ -3,9 +3,9 @@ import React from "react";
 import ContactsItem from './ContactsItem.js';
 
 
-const Contacts = ({ userData }) => {
+const Contacts = ({ users }) => {
 
-  const elements = userData.map((item) => {
+  const elements = users.map((item) => {
     return (
       <ContactsItem 
         key={item.id}
