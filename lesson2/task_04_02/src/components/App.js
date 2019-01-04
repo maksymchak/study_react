@@ -3,6 +3,8 @@ import React from 'react';
 import AppTitle from './AppTitle.js';
 import Contacts from './Contacts.js';
 
+import './App.css';
+
 const App = () => {
 
   const userData = [
