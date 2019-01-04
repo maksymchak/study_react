@@ -1,5 +1,7 @@
 import React from "react";
 
+import './ContactsItem.css';
+
 const ContactsItem = ( props ) => {
   const {
     avatar,
