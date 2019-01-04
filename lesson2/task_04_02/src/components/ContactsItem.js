@@ -18,6 +18,7 @@ const ContactsItem = ( props ) => {
         className="avatar"
         width="150"
         height="150"
+        alt={name}
         />
       <div className="container__info">
         <p className="container__info__name">{name}</p>
