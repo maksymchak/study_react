@@ -1,61 +1,46 @@
-import React from 'react';
+import React, { Component } from 'react';
 
+import userData from './users.json';
 import AppTitle from './AppTitle.js';
 import Contacts from './Contacts.js';
 
 import './App.css';
 
-const App = () => {
 
-  const userData = [
-    {
-      id: 0,
-      avatar: 'https://scontent.fiev5-1.fna.fbcdn.net/v/t1.0-9/38171782_495076197606564_5664811243492343808_n.jpg?_nc_cat=104&_nc_ht=scontent.fiev5-1.fna&oh=dd4bb7b85d3b96631ebb8b4547e8aa42&oe=5CB1B26A',
-      name: 'Антон Максимчак',
-      location: 'Kyiv',
-      geoData: 'https://www.google.com.ua/maps/place/%D0%93%D1%83%D0%B3%D0%BB+%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D0%B0/@50.4600746,30.5201888,17z/data=!4m6!3m5!1s0x40d4ce46a355fd4f:0x9bb1b5375abbc47!4b1!8m2!3d50.4600746!4d30.5223775',
-      facebook: 'https://www.facebook.com/',
-      github: 'https://github.com/',
-      mail: 'https://www.ukr.net/'
-    },
-    {
-      id: 1,
-      avatar: 'https://avatars1.githubusercontent.com/u/186223?s=400&v=4',
-      name: 'Дмитрий Рожков',
-      location: 'Kyiv',
-      geoData: 'https://www.google.com.ua/maps/place/%D0%93%D1%83%D0%B3%D0%BB+%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D0%B0/@50.4600746,30.5201888,17z/data=!4m6!3m5!1s0x40d4ce46a355fd4f:0x9bb1b5375abbc47!4b1!8m2!3d50.4600746!4d30.5223775',
-      facebook: 'https://www.facebook.com/',
-      github: 'https://github.com/',
-      mail: 'https://www.ukr.net/'
-    },
-    {
-      id: 2,
-      avatar: 'https://avatars0.githubusercontent.com/u/33201366?s=400&v=4',
-      name: 'Сергей Ларченко',
-      location: 'Kyiv',
-      geoData: 'https://www.google.com.ua/maps/place/%D0%93%D1%83%D0%B3%D0%BB+%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D0%B0/@50.4600746,30.5201888,17z/data=!4m6!3m5!1s0x40d4ce46a355fd4f:0x9bb1b5375abbc47!4b1!8m2!3d50.4600746!4d30.5223775',
-      facebook: 'https://www.facebook.com/',
-      github: 'https://github.com/',
-      mail: 'https://www.ukr.net/'
-    },
-    {
-      id: 3,
-      avatar: 'https://avatars1.githubusercontent.com/u/329326?s=400&v=4',
-      name: 'Sergey Puzankov',
-      location: 'Kyiv',
-      geoData: 'https://www.google.com.ua/maps/place/%D0%93%D1%83%D0%B3%D0%BB+%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D0%B0/@50.4600746,30.5201888,17z/data=!4m6!3m5!1s0x40d4ce46a355fd4f:0x9bb1b5375abbc47!4b1!8m2!3d50.4600746!4d30.5223775',
-      facebook: 'https://www.facebook.com/',
-      github: 'https://github.com/',
-      mail: 'https://www.ukr.net/'
-    },
-  ];
+export default class App extends Component {
 
-  return (
-    <div className="wrapper">
-      <AppTitle />
-      <Contacts users={userData} />
-    </div>
-  );
+  state = {
+    displayedContacts: userData,
+    term: ''
+  };
+
+  search(items, term) {
+    if (term.length === 0 ) {
+      return items;
+    }
+
+    return items.filter((item) => {
+      return item.name.indexOf(term) > -1;
+    });
+  }
+
+  render() {
+
+    const { displayedContacts, term } = this.state;
+
+    const visibleItems = this.search(displayedContacts, term);
+
+    return (
+      <div className="wrapper">
+        <AppTitle />
+        <Contacts users={visibleItems} />
+      </div>
+    );      
+  }
 };
 
-export default App;
+
+
+
+
+
