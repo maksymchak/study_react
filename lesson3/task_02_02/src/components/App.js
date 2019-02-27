@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 
 import userData from './users.json';
 import AppTitle from './AppTitle.js';
+import SearchPanel from './SearchPanel.js';
 import Contacts from './Contacts.js';
 
 import './App.css';
-
 
 export default class App extends Component {
 
@@ -33,6 +33,7 @@ export default class App extends Component {
     return (
       <div className="wrapper">
         <AppTitle />
+        <SearchPanel />
         <Contacts users={visibleItems} />
       </div>
     );      
