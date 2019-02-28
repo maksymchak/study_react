@@ -14,6 +14,10 @@ export default class App extends Component {
     term: ''
   };
 
+  onSearchChange = (term) => {
+    this.setState({term});
+  };
+
   search(items, term) {
     if (term.length === 0 ) {
       return items;
@@ -33,8 +37,10 @@ export default class App extends Component {
     return (
       <div className="wrapper">
         <AppTitle />
-        <SearchPanel />
-        <Contacts users={visibleItems} />
+        <SearchPanel 
+          onSearchChange={this.onSearchChange} />
+        <Contacts 
+          users={visibleItems} />
       </div>
     );      
   }
